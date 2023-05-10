@@ -1,0 +1,10 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ISearchBar>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+
+<h1>Untitled blog</h1>
+
+<input type="search" placeholder="Nombre del artículo" value="@Model.SearchInput" />
+
+<button>Buscar</button>

@@ -18,9 +18,44 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
+	// Mixin Content Type with alias "article"
+	/// <summary>Article</summary>
+	public partial interface IArticle : IPublishedElement
+	{
+		/// <summary>author</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		string Author { get; }
+
+		/// <summary>category</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		string Category { get; }
+
+		/// <summary>content</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		string Content { get; }
+
+		/// <summary>date</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		string Date { get; }
+
+		/// <summary>src</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		string Src { get; }
+
+		/// <summary>title</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		string Title { get; }
+	}
+
 	/// <summary>Article</summary>
 	[PublishedModel("article")]
-	public partial class Article : PublishedElementModel
+	public partial class Article : PublishedElementModel, IArticle
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -55,7 +90,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("author")]
-		public virtual string Author => this.Value<string>(_publishedValueFallback, "author");
+		public virtual string Author => GetAuthor(this, _publishedValueFallback);
+
+		/// <summary>Static getter for author</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static string GetAuthor(IArticle that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "author");
 
 		///<summary>
 		/// category
@@ -63,7 +103,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("category")]
-		public virtual string Category => this.Value<string>(_publishedValueFallback, "category");
+		public virtual string Category => GetCategory(this, _publishedValueFallback);
+
+		/// <summary>Static getter for category</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static string GetCategory(IArticle that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "category");
 
 		///<summary>
 		/// content
@@ -71,7 +116,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("content")]
-		public virtual string Content => this.Value<string>(_publishedValueFallback, "content");
+		public virtual string Content => GetContent(this, _publishedValueFallback);
+
+		/// <summary>Static getter for content</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static string GetContent(IArticle that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "content");
 
 		///<summary>
 		/// date
@@ -79,7 +129,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("date")]
-		public virtual string Date => this.Value<string>(_publishedValueFallback, "date");
+		public virtual string Date => GetDate(this, _publishedValueFallback);
+
+		/// <summary>Static getter for date</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static string GetDate(IArticle that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "date");
 
 		///<summary>
 		/// src
@@ -87,7 +142,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("src")]
-		public virtual string Src => this.Value<string>(_publishedValueFallback, "src");
+		public virtual string Src => GetSrc(this, _publishedValueFallback);
+
+		/// <summary>Static getter for src</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static string GetSrc(IArticle that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "src");
 
 		///<summary>
 		/// title
@@ -95,6 +155,11 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("title")]
-		public virtual string Title => this.Value<string>(_publishedValueFallback, "title");
+		public virtual string Title => GetTitle(this, _publishedValueFallback);
+
+		/// <summary>Static getter for title</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static string GetTitle(IArticle that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "title");
 	}
 }

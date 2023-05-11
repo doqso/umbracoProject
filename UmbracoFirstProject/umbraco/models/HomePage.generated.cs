@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Home Page</summary>
 	[PublishedModel("homePage")]
-	public partial class HomePage : PublishedContentModel, IArticles, ISearchBar
+	public partial class HomePage : PublishedContentModel, ISearchBar
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -50,12 +50,11 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// ArticlesList
+		/// Is Home Page
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("articlesList")]
-		public virtual object ArticlesList => global::Umbraco.Cms.Web.Common.PublishedModels.Articles.GetArticlesList(this, _publishedValueFallback);
+		[ImplementPropertyType("isHomePage")]
+		public virtual bool IsHomePage => this.Value<bool>(_publishedValueFallback, "isHomePage");
 
 		///<summary>
 		/// search Input

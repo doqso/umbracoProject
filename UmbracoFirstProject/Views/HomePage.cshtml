@@ -4,10 +4,14 @@
 
 @{
     Layout = "_Layout.cshtml";
-    Console.WriteLine(Model);
+    Console.WriteLine(Model.Children.FirstOrDefault());
+
+    var articles = (Model.IsHomePage)
+    ? Model.Children.SelectMany(c => c.Children)
+    : Model.Children;
 }
 
 @await Html.PartialAsync("blog/Header")
 @await Html.PartialAsync("blog/News")
 
-@await Html.PartialAsync("blog/Categories")
+@await Html.PartialAsync("blog/Articles", articles)

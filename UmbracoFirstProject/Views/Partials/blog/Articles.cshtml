@@ -1,21 +1,30 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<IEnumerable<IPublishedContent>>
 
-<table>
-    <thead>
-        <tr>
-            <th>Titulo</th>
-            <th>Contenido</th>
-        </tr>
-    </thead>
+<link rel="stylesheet" href="/css/articlesStyle.css" />
 
-    <tbody>
-        @foreach (IArticle item in Model)
-        {
-            <tr onclick="alert('@item.Title')">
-                <td>@item.Title</td>
-                <td>@item.Content?.Substring(0, Math.Min(item.Content.Length, 150))</td>
-            </tr>
-        }
-    </tbody>
-</table>
+<div id="articles">
+    @foreach (IArticle item in Model)
+    {
+        <article>
+            <section id="articleHeader">
+                <img src="@item.Image?.Url()" />
+                <div>
+                    <div id="bluredBackground" style="background-image: url(@item.Image?.Url())"></div>
+                    <section>
+                        <p>@item.Author</p>
+                        <p>@item.Date.ToShortDateString()</p>
+                    </section>
+                    <section class="category">
+                        <p>@item.Category</p>
+                    </section>
+                </div>
+            </section>
+
+            <section>
+                <h4>@item.Title</h4>
+                <p>@item.Content?.Substring(0, Math.Min(item.Content.Length, 150))</p>
+            </section>
+        </article>
+    }
+</div>

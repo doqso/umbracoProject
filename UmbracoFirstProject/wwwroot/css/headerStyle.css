@@ -1,0 +1,12 @@
+﻿#header{
+    margin: 4rem 0;
+    display: flex;
+}
+
+#header input{
+    width: 80%;
+}
+
+#header h3{
+    color: gray;
+}

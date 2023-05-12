@@ -39,13 +39,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 
 		/// <summary>date</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string Date { get; }
+		global::System.DateTime Date { get; }
 
-		/// <summary>src</summary>
+		/// <summary>image</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string Src { get; }
+		global::Umbraco.Cms.Core.Models.MediaWithCrops Image { get; }
 
 		/// <summary>title</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
@@ -127,27 +126,25 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		/// date
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("date")]
-		public virtual string Date => GetDate(this, _publishedValueFallback);
+		public virtual global::System.DateTime Date => GetDate(this, _publishedValueFallback);
 
 		/// <summary>Static getter for date</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetDate(IArticle that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "date");
+		public static global::System.DateTime GetDate(IArticle that, IPublishedValueFallback publishedValueFallback) => that.Value<global::System.DateTime>(publishedValueFallback, "date");
 
 		///<summary>
-		/// src
+		/// image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("src")]
-		public virtual string Src => GetSrc(this, _publishedValueFallback);
+		[ImplementPropertyType("image")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops Image => GetImage(this, _publishedValueFallback);
 
-		/// <summary>Static getter for src</summary>
+		/// <summary>Static getter for image</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetSrc(IArticle that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "src");
+		public static global::Umbraco.Cms.Core.Models.MediaWithCrops GetImage(IArticle that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(publishedValueFallback, "image");
 
 		///<summary>
 		/// title

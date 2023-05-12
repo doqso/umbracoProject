@@ -77,17 +77,16 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		/// date
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("date")]
-		public virtual string Date => global::Umbraco.Cms.Web.Common.PublishedModels.Article.GetDate(this, _publishedValueFallback);
+		public virtual global::System.DateTime Date => global::Umbraco.Cms.Web.Common.PublishedModels.Article.GetDate(this, _publishedValueFallback);
 
 		///<summary>
-		/// src
+		/// image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "11.3.1+66434bf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("src")]
-		public virtual string Src => global::Umbraco.Cms.Web.Common.PublishedModels.Article.GetSrc(this, _publishedValueFallback);
+		[ImplementPropertyType("image")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops Image => global::Umbraco.Cms.Web.Common.PublishedModels.Article.GetImage(this, _publishedValueFallback);
 
 		///<summary>
 		/// title
